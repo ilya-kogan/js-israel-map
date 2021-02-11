@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Israel: Get permitted area in 1km by Address</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#0038b7">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.svg">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff8a01">
+
+	<link href="assets/css/styles.css?v2.0.4" rel="stylesheet" type="text/css" />
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMJjaLS5Vi9E1pIGu-AU15HEp7LFPbV1U&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
+	<script src="assets/js/main.js?v2.0.4"></script>
+</head>
+
+<body onload="init(); checkAddress(); clearValOnInit();">
+	<div class="search">
+		<h1>Israel, 18.09.2020<br>Corona restrictions in <b>1km</b> from Home<br><br><u>Check your Address:</u></h1>
+
+		<form onsubmit="checkAddress(); return false;">
+			<input id="address" type="text" value="Derech Menachem Begin 125, Tel Aviv" placeholder="Derech Menachem Begin 125, Tel Aviv" required>
+			<input type="submit" value="Get Radius">
+		</form>
+		
+		<button class="geolocate-button" title="Geolocate" onClick="geolocate();">Check my current position (GPS)</button>
+
+		<div class="controls fullscreen-control">
+			<button title="Toggle Fullscreen">Open Map in Full Screen Mode</button>
+		</div>
+	</div>
+
+	<div id="map"></div>
+
+	<noscript><div><img src="https://mc.yandex.ru/watch/67490989" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
+</html>
